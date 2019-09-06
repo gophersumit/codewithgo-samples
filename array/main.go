@@ -30,10 +30,16 @@ func main() {
 	fmt.Println(data)
 	// output [Hello World!]
 
-	// short variable declaration for array literals
+	// ellipsis
 	newData := [2]string{"Hello", "World"}
 	fmt.Println(newData)
 	// output [Hello World!]
+
+	// output [Hello World!]
+	// short variable declaration for array literals
+	arr := [...]string{"Hello", "World", "From Go"}
+	fmt.Println(arr)
+	// output [Hello World From Go]
 
 	// iterating over array
 	days = [7]string{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}
@@ -54,4 +60,14 @@ func main() {
 		fmt.Println(day)
 	}
 
+	//type of array
+	greetings := [...]string{"Hello", "World"}
+	//greetings = [...]string{"Hello", "World", "From Go"}
+	//above line is error :  cannot use [3]string literal (type [3]string) as type [2]string in assignment
+	fmt.Println(greetings)
+
+	a := [2]string{"Hello", "World"}
+	b := [...]string{"Hello", "World"}
+	fmt.Println(a == b)
+	// output : true
 }
