@@ -61,12 +61,12 @@ func main() {
 	printSlice(alldays)
 
 	// empty and nil slices
-	s := make([]string, 3)[3:]
+	sl := make([]string, 3)[3:]
 	var e []string
-	printSlice(s)
+	printSlice(sl)
 	printSlice(e)
 
-	fmt.Println("Is s nil => ", s == nil)
+	fmt.Println("Is s nil => ", sl == nil)
 	fmt.Println("Is e nil => ", e == nil)
 
 	// iterating over slices
@@ -74,16 +74,18 @@ func main() {
 		fmt.Println(day)
 	}
 
+	//append operation
+	s := make([]string, 0)
 	// appending elements
-	// s = append(s, 25)
-	// fmt.Printf("size: %v, capacity:%v,value:%v\n", len(s), cap(s), s)
-	// s = append(s, 22)
-	// fmt.Printf("size: %v, capacity:%v,value:%v\n", len(s), cap(s), s)
-	// s = append(s, 21)
-	// fmt.Printf("size: %v, capacity:%v,value:%v\n", len(s), cap(s), s)
-	// s = append(s, 17)
-	// s = append(s, 27)
-	// fmt.Printf("size: %v, capacity:%v,value:%v\n", len(s), cap(s), s)
+	s = append(s, "a")
+	printSlice(s)
+	s = append(s, "e")
+	printSlice(s)
+	s = append(s, "i")
+	printSlice(s)
+	s = append(s, "o")
+	s = append(s, "u")
+	printSlice(s)
 }
 
 // comparing slices
