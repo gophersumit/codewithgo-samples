@@ -70,8 +70,56 @@ func main() {
 	for _, value := range caps {
 		fmt.Printf("value => %v\n", value)
 	}
-	for key, _ := range caps {
+	for key := range caps {
 		fmt.Printf("key =>%v\n", key)
 	}
+
+	//finding element in map
+	cocs := map[string]string{
+		"India":   "Delhi",
+		"England": "London",
+		"U.S.":    "Washington",
+		"XYZ":     "",
+	}
+
+	fmt.Printf("Checking captial for India-> %v\n",
+		cocs["India"])
+	fmt.Printf("Checking captial for XYZ-> %v\n",
+		cocs["XYZ"])
+	fmt.Printf("Checking captial for ABC-> %v\n",
+		cocs["ABC"])
+
+	// value,ok semantics
+	value, ok := cocs["XYZ"]
+	if ok {
+		fmt.Printf("Value is %v \n", value)
+	} else {
+		fmt.Println("Key not found")
+	}
+	value, ok = cocs["ABC"]
+	if ok {
+		fmt.Printf("Value is %v \n", value)
+	} else {
+		fmt.Println("Key not found")
+	}
+
+	// updating value
+	capitals = map[string]string{
+		"India":   "",
+		"England": "London",
+		"U.S.":    "Washington",
+	}
+	capitals["India"] = "Delhi"
+	fmt.Println(capitals)
+
+	//deleting a value
+	capitals = map[string]string{
+		"India":   "Pune",
+		"England": "London",
+		"U.S.":    "Washington",
+	}
+
+	delete(capitals, "England")
+	fmt.Println(capitals)
 
 }
